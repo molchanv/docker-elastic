@@ -5,4 +5,4 @@ output:
   elasticsearch:
     hosts: elasticsearch:9200
     username: elastic
-    password: changeme
+    password: DdZkAX68w3zhnJNk
