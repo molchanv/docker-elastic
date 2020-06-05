@@ -18,8 +18,8 @@ services:
       - "9200:9200"
       - "9300:9300"
     environment:
-      ES_JAVA_OPTS: "-Xmx1g -Xms1g"
-      ELASTIC_PASSWORD: $PASSWORD
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      ELASTIC_PASSWORD: changeme
       # Use single node discovery in order to disable production mode and avoid bootstrap checks
       # see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
       discovery.type: single-node
@@ -88,7 +88,7 @@ services:
          -E apm-server.rum.enabled=true
          -E setup.kibana.host=kibana:5601
          -E output.elasticsearch.username=elastic
-         -E output.elasticsearch.password=$PASSWORD
+         -E output.elasticsearch.password=changeme
          -E setup.template.settings.index.number_of_replicas=0
          -E apm-server.kibana.enabled=true
          -E apm-server.kibana.host=kibana:5601
